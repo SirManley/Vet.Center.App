@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            text-align: center; /* To center the image */
+        }
+        img {
+            max-width: 100px; /* Set a max width for the logo */
+            margin-bottom: 20px; /* Adds space between the logo and the form */
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <img src="C:/Users/Sir Manley/Downloads/Fall 2024/INFSYS 4850 Rottman/Teams Docs for Program/Picture1.2.jpg" alt="Company Logo">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Enter SSOID" required>
+    <input type="password" id="password" placeholder="Enter Password" required>
+    <button onclick="login()">Submit</button>
+    <p class="error" id="error-message"></p>
+</div>
+
+<script>
+    function login() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const errorMessage = document.getElementById("error-message");
+
+        // Check if the username and password are correct
+        if (username === "rjm4zc" && password === "PW1") {
+            // Redirect to the protected page
+            window.location.href = "Secure.Page.1.html";
+        } else {
+            errorMessage.textContent = "Invalid SSOID or password.";
+        }
+    }
+</script>
+
+</body>
+</html>
+

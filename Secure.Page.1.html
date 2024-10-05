@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Page</title>
+    <style>
+
+        
+        /* Styling for the navigation bar */
+        .navbar {
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 10px 0;
+            z-index: 1000;
+            box-shadow: 0 4px 2px -2px gray;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .box {
+            background-color: #808080;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            width: 75px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .box:hover {
+            background-color: #5a5a5a;
+        }
+
+        .box-scan {
+            background-color: #007bff;
+            width: 150px;
+            font-size: 18px;
+            padding: 20px;
+        }
+
+        .box-scan:hover {
+            background-color: #0056b3;
+        }
+
+        .content {
+            margin-top: 100px;
+            padding: 20px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100px; /* Set max width for logo */
+            margin-bottom: 20px; /* Space between the logo and welcome message */
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 2000; 
+            padding-top: 100px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-height: 80%;
+            overflow: auto;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* PDF viewer within modal */
+        .pdf-viewer {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation bar containing the buttons -->
+    <div class="navbar">
+        <div class="container">
+            <a href="#" id="scanBtn" class="box box-scan">Scan</a>
+            <a href="#" id="coeBtn" class="box">COE</a>
+            <a href="#" id="enrollmentBtn" class="box">Enrollment MG</a>
+            <a href="#" id="scheduleBtn" class="box">Schedule</a> <!-- This will open the modal -->
+            <a href="#" id="dd214Btn" class="box">DD214</a>
+            <a href="#" id="tarBtn" class="box">TAR</a>
+            <a href="#" id="awardLetterBtn" class="box">Award Letter</a>
+        </div>
+    </div>
+
+    <!-- Content of the page -->
+    <div class="content">
+        <!-- Below is the Vet Center LOGO - replace this pic with a larger version -->
+        <img src="C:/Users/Sir Manley/Downloads/Fall 2024/INFSYS 4850 Rottman/Teams Docs for Program/Picture1.2.jpg" alt="Company Logo">
+        <h1>Welcome to the Secure Page</h1>
+        <p>Scroll down to see how the navigation bar remains in place while you scroll through the content.</p>
+    
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Secure Page</title>
+            <style>
+                /* Styling for the navigation bar */
+                .navbar {
+                    background-color: #333;
+                    position: fixed;
+                    top: 0;
+                    width: 100%;
+                    padding: 10px 0;
+                    z-index: 1000;
+                    box-shadow: 0 4px 2px -2px gray;
+                }
+        
+                .navbar .container {
+                    display: flex;
+                    justify-content: center;
+                    gap: 15px;
+                }
+        
+                .box {
+                    background-color: #808080;
+                    color: white;
+                    padding: 10px;
+                    text-align: center;
+                    border-radius: 10px;
+                    width: 75px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    font-size: 14px;
+                    text-decoration: none;
+                }
+        
+                .box:hover {
+                    background-color: #5a5a5a;
+                }
+        
+                .box-scan {
+                    background-color: #007bff;
+                    width: 150px;
+                    font-size: 18px;
+                    padding: 20px;
+                }
+        
+                .box-scan:hover {
+                    background-color: #0056b3;
+                }
+        
+                .content {
+                    margin-top: 100px;
+                    padding: 20px;
+                    font-size: 18px;
+                    text-align: center;
+                }
+        
+                img {
+                    max-width: 100px; /* Set max width for logo */
+                    margin-bottom: 20px; /* Space between the logo and welcome message */
+                }
+        
+                /* Modal Styles */
+                .modal {
+                    display: none; 
+                    position: fixed; 
+                    z-index: 2000; 
+                    padding-top: 100px; 
+                    left: 0;
+                    top: 0;
+                    width: 100%; 
+                    height: 100%; 
+                    background-color: rgba(0, 0, 0, 0.5);
+                }
+        
+                .modal-content {
+                    background-color: #fefefe;
+                    margin: auto;
+                    padding: 20px;
+                    border: 1px solid #888;
+                    width: 80%;
+                    max-height: 80%;
+                    overflow: auto;
+                }
+        
+                .close {
+                    color: #aaa;
+                    float: right;
+                    font-size: 28px;
+                    font-weight: bold;
+                }
+        
+                .close:hover,
+                .close:focus {
+                    color: black;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+        
+                /* PDF viewer within modal */
+                .pdf-viewer {
+                    width: 100%;
+                    height: 500px;
+                }
+            </style>
+        </head>
+        <body>
+        
+            <!-- Navigation bar containing the buttons -->
+            <div class="navbar">
+                <div class="container">
+                    <a href="#" id="scanBtn" class="box box-scan">Scan</a>
+                    <a href="#" id="coeBtn" class="box">COE</a>
+                    <a href="#" id="enrollmentBtn" class="box">Enrollment MG</a>
+                    <a href="#" id="scheduleBtn" class="box">Schedule</a> <!-- This will open the modal -->
+                    <a href="#" id="dd214Btn" class="box">DD214</a>
+                    <a href="#" id="tarBtn" class="box">TAR</a>
+                    <a href="#" id="awardLetterBtn" class="box">Award Letter</a>
+                </div>
+            </div>
+        
+            <!-- Content of the page -->
+            <div class="content">
+                <!-- Below is the Vet Center LOGO - replace this pic with a larger version -->
+                <img src="C:/Users/Sir Manley/Downloads/Fall 2024/INFSYS 4850 Rottman/Teams Docs for Program/Picture1.2.jpg" alt="Company Logo">
+                <h1>Welcome to the Secure Page</h1>
+                <p>Scroll down to see how the navigation bar remains in place while you scroll through the content.</p>
+            
+                <!-- Table for multiple columns -->
+                <table border="1" style="width: 100%; text-align: center; border-collapse: collapse;">
+                    <thead style="background-color: #ca4141; color: black;">
+                        <tr>
+                            <th>Name</th>
+                            <th>Student ID</th>
+                            <th>Benefit</th>
+                            <th>Required Docs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="height: 40px;">
+                            <td>Manley, Ryan</td>
+                            <td>18000001</td>
+                            <td>CH31</td>
+                            <td>
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box1_1')">
+                                <div id="box1_1" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">EM</div>
+                        
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box2_1')">
+                                <div id="box2_1" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">SCH</div>
+                        
+                                <span style="margin-right: 5px;">Date Checked</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleDate(this, 'dateBox_1', 'checkMark_1')">
+                                <span id="checkMark_1" style="display: none;"></span>
+                                <div id="dateBox_1" style="display: inline-block; background-color: #add8e6; color: black; padding: 5px; border-radius: 5px; width: 60px; text-align: center;"></div>
+                            </td>
+                        </tr>
+                        <tr style="height: 40px;">
+                            <td>Roeback, Jack</td>
+                            <td>18000002</td>
+                            <td>CH33</td>
+                            <td>
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box1_8')">
+                                <div id="box1_8" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">EM</div>
+                                
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box2_8')">
+                                <div id="box2_8" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">SCH</div>
+                                
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box3_8')">
+                                <div id="box3_8" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">COE</div>
+                                
+                                <span style="margin-right: 5px;">Date Checked</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleDate(this, 'dateBox_8', 'checkMark_8')">
+                                <span id="checkMark_8" style="display: none;"></span>
+                                <div id="dateBox_8" style="display: inline-block; background-color: #add8e6; color: black; padding: 5px; border-radius: 5px; width: 60px; text-align: center;"></div>
+                            </td>
+                        </tr>
+                        <tr style="height: 40px;">
+                            <td>Smith, Josh</td>
+                            <td>18000003</td>
+                            <td>CH35</td>
+                            <td>
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box1_9')">
+                                <div id="box1_9" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">EM</div>
+                                
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box2_9')">
+                                <div id="box2_9" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">SCH</div>
+                                
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box3_9')">
+                                <div id="box3_9" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">COE</div>
+                                
+                                <span style="margin-right: 5px;">Date Checked</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleDate(this, 'dateBox_9', 'checkMark_9')">
+                                <span id="checkMark_9" style="display: none;"></span>
+                                <div id="dateBox_9" style="display: inline-block; background-color: #add8e6; color: black; padding: 5px; border-radius: 5px; width: 60px; text-align: center;"></div>
+                            </td>
+                        </tr>
+                        <tr style="height: 40px;">
+                            <td>Donnelly, Kevin</td>
+                            <td>18000004</td>
+                            <td>FED TA</td>
+                            <td>
+                                <!-- Required Docs -->
+                                <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+                                    <div style="margin: 5px; text-align: center;">
+                                        <span>Added</span>
+                                        <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box1_4')">
+                                        <div id="box1_4" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center;">EM</div>
+                                    </div>
+                        
+                                    <div style="margin: 5px; text-align: center;">
+                                        <span>Added</span>
+                                        <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box2_4')">
+                                        <div id="box2_4" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center;">SCH</div>
+                                    </div>
+                        
+                                    <div style="margin: 5px; text-align: center;">
+                                        <span>Added</span>
+                                        <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box3_4')">
+                                        <div id="box3_4" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center;">TAR</div>
+                                    </div>
+                        
+                                    <div style="margin: 5px; text-align: center;">
+                                        <span>Date Checked</span>
+                                        <input type="checkbox" style="margin-right: 5px;" onclick="toggleDate(this, 'dateBox_4', 'checkMark_4')">
+                                        <span id="checkMark_4" style="display: none;"></span>
+                                        <div id="dateBox_4" style="display: inline-block; background-color: #add8e6; color: black; padding: 5px; border-radius: 5px; width: 60px; text-align: center;"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="height: 40px;">
+                            <td>Nguyen, Duy</td>
+                            <td>18000005</td>
+                            <td>Missouri Returning Heros</td>
+                            <td>
+                                <!-- Required Docs -->
+                                <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+                                    <div style="margin: 5px; text-align: center;">
+                                        <span>Added</span>
+                                        <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box1_5')">
+                                        <div id="box1_5" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center;">EM</div>
+                                    </div>
+                        
+                                    <div style="margin: 5px; text-align: center;">
+                                        <span>Added</span>
+                                        <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box2_5')">
+                                        <div id="box2_5" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center;">SCH</div>
+                                    </div>
+                        
+                                    <div style="margin: 5px; text-align: center;">
+                                        <span>Added</span>
+                                        <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box3_5')">
+                                        <div id="box3_5" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center;">DD214</div>
+                                    </div>
+                        
+                                    <div style="margin: 5px; text-align: center;">
+                                        <span>Date Checked</span>
+                                        <input type="checkbox" style="margin-right: 5px;" onclick="toggleDate(this, 'dateBox_5', 'checkMark_5')">
+                                        <span id="checkMark_5" style="display: none;"></span>
+                                        <div id="dateBox_5" style="display: inline-block; background-color: #add8e6; color: black; padding: 5px; border-radius: 5px; width: 60px; text-align: center;"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="height: 40px;">
+                            <td>Howard, Moe</td>
+                            <td>18000006</td>
+                            <td>State TA</td>
+                            <td>
+                                <!-- Required Docs -->
+                                <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+                                    <div style="margin: 5px; text-align: center;">
+                                        <span>Added</span>
+                                        <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box1_6')">
+                                        <div id="box1_6" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center;">EM</div>
+                                    </div>
+                        
+                                    <div style="margin: 5px; text-align: center;">
+                                        <span>Added</span>
+                                        <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box2_6')">
+                                        <div id="box2_6" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center;">SCH</div>
+                                    </div>
+                        
+                                    <div style="margin: 5px; text-align: center;">
+                                        <span>Added</span>
+                                        <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box3_6')">
+                                        <div id="box3_6" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center;">Award</div>
+                                    </div>
+                        
+                                    <div style="margin: 5px; text-align: center;">
+                                        <span>Date Checked</span>
+                                        <input type="checkbox" style="margin-right: 5px;" onclick="toggleDate(this, 'dateBox_6', 'checkMark_6')">
+                                        <span id="checkMark_6" style="display: none;"></span>
+                                        <div id="dateBox_6" style="display: inline-block; background-color: #add8e6; color: black; padding: 5px; border-radius: 5px; width: 60px; text-align: center;"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="height: 40px;">
+                            <td>Howard, Shemp</td>
+                            <td>18000007</td>
+                            <td>CH35</td>
+                            <td>
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box1_7')">
+                                <div id="box1_7" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">EM</div>
+                                
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box2_7')">
+                                <div id="box2_7" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">SCH</div>
+                                
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box3_7')">
+                                <div id="box3_7" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">COE</div>
+                                
+                                <span style="margin-right: 5px;">Date Checked</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleDate(this, 'dateBox_7', 'checkMark_7')">
+                                <span id="checkMark_7" style="display: none;"></span>
+                                <div id="dateBox_7" style="display: inline-block; background-color: #add8e6; color: black; padding: 5px; border-radius: 5px; width: 60px; text-align: center;"></div>
+                            </td>
+                        </tr>
+                        <tr style="height: 40px;">
+                            <td>Fine, Larry</td>
+                            <td>18000008</td>
+                            <td>CH31</td>
+                            <td>
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box1_12')">
+                                <div id="box1_12" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">EM</div>
+                                
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box2_12')">
+                                <div id="box2_12" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">SCH</div>
+                        
+                                <span style="margin-right: 5px;">Date Checked</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleDate(this, 'dateBox_12', 'checkMark_12')">
+                                <span id="checkMark_12" style="display: none;"></span>
+                                <div id="dateBox_12" style="display: inline-block; background-color: #add8e6; color: black; padding: 5px; border-radius: 5px; width: 60px; text-align: center;"></div>
+                            </td>
+                        </tr>
+                        <tr style="height: 40px;">
+                            <td>Howard, Curly</td>
+                            <td>18000009</td>
+                            <td>CH33</td>
+                            <td>
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box1_10')">
+                                <div id="box1_10" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">EM</div>
+                                
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box2_10')">
+                                <div id="box2_10" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">SCH</div>
+                        
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box3_10')">
+                                <div id="box3_10" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">COE</div>
+                        
+                                <span style="margin-right: 5px;">Date Checked</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleDate(this, 'dateBox_10', 'checkMark_10')">
+                                <span id="checkMark_10" style="display: none;"></span>
+                                <div id="dateBox_10" style="display: inline-block; background-color: #add8e6; color: black; padding: 5px; border-radius: 5px; width: 60px; text-align: center;"></div>
+                            </td>
+                        </tr>
+                        <tr style="height: 40px;">
+                            <td>Besser, Joe</td>
+                            <td>18000010</td>
+                            <td>FED TA</td>
+                            <td>
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box1_11')">
+                                <div id="box1_11" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">EM</div>
+                                
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box2_11')">
+                                <div id="box2_11" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">SCH</div>
+                        
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box3_11')">
+                                <div id="box3_11" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">TAR</div>
+                        
+                                <span style="margin-right: 5px;">Date Checked</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleDate(this, 'dateBox_11', 'checkMark_11')">
+                                <span id="checkMark_11" style="display: none;"></span>
+                                <div id="dateBox_11" style="display: inline-block; background-color: #add8e6; color: black; padding: 5px; border-radius: 5px; width: 60px; text-align: center;"></div>
+                            </td>
+                        </tr>
+                        <tr style="height: 40px;">
+                            <td>DeRita, "Curly" Joe</td>
+                            <td>18000011</td>
+                            <td>State TA</td>
+                            <td>
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box1_derita')">
+                                <div id="box1_derita" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">EM</div>
+                        
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box2_derita')">
+                                <div id="box2_derita" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">SCH</div>
+                        
+                                <span>Added</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleBoxColor(this, 'box3_derita')">
+                                <div id="box3_derita" style="display: inline-block; background-color: #808080; color: white; padding: 5px; border-radius: 5px; width: 60px; text-align: center; margin-right: 5px;">Award</div>
+                        
+                                <span style="margin-right: 5px;">Date Checked</span>
+                                <input type="checkbox" style="margin-right: 5px;" onclick="toggleDate(this, 'dateBox_derita', 'checkMark_derita')">
+                                <span id="checkMark_derita" style="display: none;"></span>
+                                <div id="dateBox_derita" style="display: inline-block; background-color: #add8e6; color: black; padding: 5px; border-radius: 5px; width: 60px; text-align: center;"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <script>
+                    // Added Boxes
+                    function toggleBoxColor(checkbox, boxId) {
+                        var box = document.getElementById(boxId);
+                        if (checkbox.checked) {
+                            box.style.backgroundColor = 'black';
+                            box.style.color = 'grey';
+                        } else {
+                            box.style.backgroundColor = '#808080'; // original color
+                            box.style.color = 'white'; // original text color
+                        }
+                    }
+                
+                    // Date Checked box
+                    function toggleDate(checkbox, dateBoxId, checkMarkId) {
+                        var checkMark = document.getElementById(checkMarkId);
+                        var dateBox = document.getElementById(dateBoxId);
+                
+                        if (checkbox.checked) {
+                            checkMark.style.display = 'inline'; // Show check mark
+                            var today = new Date();
+                            var formattedDate = (today.getMonth() + 1) + '/' + today.getDate(); // Month is 0-based
+                            dateBox.textContent = formattedDate; // Set the date in the box
+                        } else {
+                            checkMark.style.display = 'none'; // Hide check mark
+                            dateBox.textContent = ''; // Clear the box
+                        }
+                    }
+                </script>
+                
+        
+                    </tbody>
+                </table>
+            </div>
+        
+            <!-- The Modal for Schedule -->
+            <div id="scheduleModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Schedule Instructions</h2>
+                    <embed src="C:\Users\Sir Manley\Downloads\Fall 2024\INFSYS 4850 Rottman\Teams Docs for Program\Schedule slide show.pdf" class="pdf-viewer" type="application/pdf">
+                </div>
+            </div>
+        
+            <!-- The Modal for COE -->
+            <div id="coeModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>COE Instructions</h2>
+                    <embed src="C:\Users\Sir Manley\Downloads\Fall 2024\INFSYS 4850 Rottman\Teams Docs for Program\COE.pdf" class="pdf-viewer" type="application/pdf">
+                </div>
+            </div>
+        
+            <!-- The Modal for Enrollment MG -->
+            <div id="enrollmentModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Enrollment Manager Instructions</h2>
+                    <embed src="C:\Users\Sir Manley\Downloads\Fall 2024\INFSYS 4850 Rottman\Teams Docs for Program\Enrollment Manager.pdf" class="pdf-viewer" type="application/pdf">
+                </div>
+            </div>
+        
+            <!-- The Modal for DD214 -->
+            <div id="dd214Modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>DD214 Instructions</h2>
+                    <embed src="C:\Users\Sir Manley\Downloads\Fall 2024\INFSYS 4850 Rottman\Teams Docs for Program\DD214.pdf" class="pdf-viewer" type="application/pdf">
+                </div>
+            </div>
+        
+            <!-- The Modal for TAR -->
+            <div id="tarModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>TAR Instructions</h2>
+                    <embed src="C:\Users\Sir Manley\Downloads\Fall 2024\INFSYS 4850 Rottman\Teams Docs for Program\TAR.pdf" class="pdf-viewer" type="application/pdf">
+                </div>
+            </div>
+        
+            <!-- The Modal for Award Letter -->
+            <div id="awardLetterModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Award Letter Instructions</h2>
+                    <embed src="C:\Users\Sir Manley\Downloads\Fall 2024\INFSYS 4850 Rottman\Teams Docs for Program\Award Letter.pdf" class="pdf-viewer" type="application/pdf">
+                </div>
+            </div>
+        
+            <script>
+                // Modal functionality for each button
+                const modals = {
+                    scan: document.getElementById("scanModal"), // If you have a modal for the scan button
+                    coe: document.getElementById("coeModal"),
+                    enrollment: document.getElementById("enrollmentModal"),
+                    schedule: document.getElementById("scheduleModal"),
+                    dd214: document.getElementById("dd214Modal"),
+                    tar: document.getElementById("tarModal"),
+                    awardLetter: document.getElementById("awardLetterModal"),
+                };
+        
+                // Function to open the modal
+                function openModal(modal) {
+                    modal.style.display = "block";
+                }
+        
+                // Function to close the modal
+                function closeModal(modal) {
+                    modal.style.display = "none";
+                }
+        
+                // Add event listeners for each button
+                document.getElementById("scanBtn").onclick = function() {
+                    openModal(modals.scan);
+                };
+                document.getElementById("coeBtn").onclick = function() {
+                    openModal(modals.coe);
+                };
+                document.getElementById("enrollmentBtn").onclick = function() {
+                    openModal(modals.enrollment);
+                };
+                document.getElementById("scheduleBtn").onclick = function() {
+                    openModal(modals.schedule);
+                };
+                document.getElementById("dd214Btn").onclick = function() {
+                    openModal(modals.dd214);
+                };
+                document.getElementById("tarBtn").onclick = function() {
+                    openModal(modals.tar);
+                };
+                document.getElementById("awardLetterBtn").onclick = function() {
+                    openModal(modals.awardLetter);
+                };
+        
+                // Close modal when the user clicks on <span> (x)
+                const closeButtons = document.getElementsByClassName("close");
+                for (let closeButton of closeButtons) {
+                    closeButton.onclick = function() {
+                        const modal = closeButton.closest(".modal");
+                        closeModal(modal);
+                    };
+                }
+        
+                // Close modal when clicking outside of the modal
+                window.onclick = function(event) {
+                    for (let modal of Object.values(modals)) {
+                        if (event.target == modal) {
+                            closeModal(modal);
+                        }
+                    }
+                };
+            </script>
+        
+        
+        
+        
+        </body>
+        </html>
+        
+
+    <!-- The Modal for Schedule -->
+    <div id="scheduleModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Schedule Instructions</h2>
+            <embed src="C:\Users\Sir Manley\Downloads\Fall 2024\INFSYS 4850 Rottman\Teams Docs for Program\Schedule slide show.pdf" class="pdf-viewer" type="application/pdf">
+        </div>
+    </div>
+
+    <!-- The Modal for COE -->
+    <div id="coeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>COE Instructions</h2>
+            <embed src="C:\Users\Sir Manley\Downloads\Fall 2024\INFSYS 4850 Rottman\Teams Docs for Program\COE.pdf" class="pdf-viewer" type="application/pdf">
+        </div>
+    </div>
+
+    <!-- The Modal for Enrollment MG -->
+    <div id="enrollmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Enrollment Manager Instructions</h2>
+            <embed src="C:\Users\Sir Manley\Downloads\Fall 2024\INFSYS 4850 Rottman\Teams Docs for Program\Enrollment Manager.pdf" class="pdf-viewer" type="application/pdf">
+        </div>
+    </div>
+
+    <!-- The Modal for DD214 -->
+    <div id="dd214Modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>DD214 Instructions</h2>
+            <embed src="C:\Users\Sir Manley\Downloads\Fall 2024\INFSYS 4850 Rottman\Teams Docs for Program\DD214.pdf" class="pdf-viewer" type="application/pdf">
+        </div>
+    </div>
+
+    <!-- The Modal for TAR -->
+    <div id="tarModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>TAR Instructions</h2>
+            <embed src="C:\Users\Sir Manley\Downloads\Fall 2024\INFSYS 4850 Rottman\Teams Docs for Program\TAR.pdf" class="pdf-viewer" type="application/pdf">
+        </div>
+    </div>
+
+    <!-- The Modal for Award Letter -->
+    <div id="awardLetterModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Award Letter Instructions</h2>
+            <embed src="C:\Users\Sir Manley\Downloads\Fall 2024\INFSYS 4850 Rottman\Teams Docs for Program\Award Letter.pdf" class="pdf-viewer" type="application/pdf">
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality for each button
+        const modals = {
+            scan: document.getElementById("scanModal"), // If you have a modal for the scan button
+            coe: document.getElementById("coeModal"),
+            enrollment: document.getElementById("enrollmentModal"),
+            schedule: document.getElementById("scheduleModal"),
+            dd214: document.getElementById("dd214Modal"),
+            tar: document.getElementById("tarModal"),
+            awardLetter: document.getElementById("awardLetterModal"),
+        };
+
+        // Function to open the modal
+        function openModal(modal) {
+            modal.style.display = "block";
+        }
+
+        // Function to close the modal
+        function closeModal(modal) {
+            modal.style.display = "none";
+        }
+
+        // Add event listeners for each button
+        document.getElementById("scanBtn").onclick = function() {
+            openModal(modals.scan);
+        };
+        document.getElementById("coeBtn").onclick = function() {
+            openModal(modals.coe);
+        };
+        document.getElementById("enrollmentBtn").onclick = function() {
+            openModal(modals.enrollment);
+        };
+        document.getElementById("scheduleBtn").onclick = function() {
+            openModal(modals.schedule);
+        };
+        document.getElementById("dd214Btn").onclick = function() {
+            openModal(modals.dd214);
+        };
+        document.getElementById("tarBtn").onclick = function() {
+            openModal(modals.tar);
+        };
+        document.getElementById("awardLetterBtn").onclick = function() {
+            openModal(modals.awardLetter);
+        };
+
+        // Close modal when the user clicks on <span> (x)
+        const closeButtons = document.getElementsByClassName("close");
+        for (let closeButton of closeButtons) {
+            closeButton.onclick = function() {
+                const modal = closeButton.closest(".modal");
+                closeModal(modal);
+            };
+        }
+
+        // Close modal when clicking outside of the modal
+        window.onclick = function(event) {
+            for (let modal of Object.values(modals)) {
+                if (event.target == modal) {
+                    closeModal(modal);
+                }
+            }
+        };
+    </script>
+
+
+
+
+</body>
+</html>
